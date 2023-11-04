@@ -1,5 +1,42 @@
 # linux_app_use_in_windows
 
+
+<!-- vim-markdown-toc Marked -->
+
+* [1 WSL Install](#1-wsl-install)
+    - [1.1 Preparations before installation](#1.1-preparations-before-installation)
+    - [1.2 Download the wsl installation package](#1.2-download-the-wsl-installation-package)
+* [2 Create a directory on the non-C drive to place the package you just downloaded](#2-create-a-directory-on-the-non-c-drive-to-place-the-package-you-just-downloaded)
+    - [2.1 Unzip the installation package and execute ubuntu2004.exe in the package.](#2.1-unzip-the-installation-package-and-execute-ubuntu2004.exe-in-the-package.)
+* [3 Settings for ubuntu in wsl](#3-settings-for-ubuntu-in-wsl)
+    - [3.1 Update packages in environment](#3.1-update-packages-in-environment)
+    - [3.2 Compilation and build tool installation](#3.2-compilation-and-build-tool-installation)
+    - [3.3 Install gtk3 execution environment](#3.3-install-gtk3-execution-environment)
+    - [3.4 Install your own GUI applications and their dependencies](#3.4-install-your-own-gui-applications-and-their-dependencies)
+    - [3.5 Install a desktop environment for executing GUI programs](#3.5-install-a-desktop-environment-for-executing-gui-programs)
+    - [3.6 Install your language pack](#3.6-install-your-language-pack)
+    - [3.7 Install xrdp remote desktop software](#3.7-install-xrdp-remote-desktop-software)
+    - [3.8 Modify the xrdp default port](#3.8-modify-the-xrdp-default-port)
+    - [3.9 Specify the login session type for the current user](#3.9-specify-the-login-session-type-for-the-current-user)
+    - [3.10 Start xrdp](#3.10-start-xrdp)
+* [4 Remote login method on windows side](#4-remote-login-method-on-windows-side)
+* [5 Install other necessary programs](#5-install-other-necessary-programs)
+    - [5.1 Install non-English input methods](#5.1-install-non-english-input-methods)
+        + [5.1.1 Install input method](#5.1.1-install-input-method)
+        + [5.1.2 Set up automatic startup](#5.1.2-set-up-automatic-startup)
+        + [5.1.3 Configure environment variables](#5.1.3-configure-environment-variables)
+        + [5.1.4 Restart WSL](#5.1.4-restart-wsl)
+        + [5.1.5 Re-enter WSL and add input method from desktop](#5.1.5-re-enter-wsl-and-add-input-method-from-desktop)
+        + [5.1.6 Choose the input method you want](#5.1.6-choose-the-input-method-you-want)
+* [6 Run GUI program in remote desktop](#6-run-gui-program-in-remote-desktop)
+* [7 Some common problems solved](#7-some-common-problems-solved)
+    - [7.1 After a period of inactivity during remote connection, the screen goes black and cannot be entered.](#7.1-after-a-period-of-inactivity-during-remote-connection,-the-screen-goes-black-and-cannot-be-entered.)
+    - [7.2 Linux sharing windows font in WSL](#7.2-linux-sharing-windows-font-in-wsl)
+    - [7.3 ALT key does not work in GUI program in remote desktop](#7.3-alt-key-does-not-work-in-gui-program-in-remote-desktop)
+
+<!-- vim-markdown-toc -->
+
+
 ## 1 WSL Install
 
 ### 1.1 Preparations before installation
