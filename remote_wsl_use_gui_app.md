@@ -233,4 +233,47 @@ presistent bitmap cache this option cannot be selected
 
 ![persistent_bitmap_cache](img/persistent_bitmap_cache.png)
 
+### 7.2 Linux sharing windows font in WSL
+
+
+
+(1). Open WSL and enter the following command to mount the Windows font directory to the WSL font directory
+
+```bash
+sudo mkdir /usr/share/fonts/winFonts
+sudo mount --bind /mnt/c/Windows/Fonts /usr/share/fonts/winFonts
+```
+(2). Update font cache
+
+```bash
+sudo fc-cache -fv
+```
+**note**: Please note that this method only works within the current session. If you want the font directory to be automatically mounted every time you start WSL, you can add the mount command to ~/.bashrc.
+
+```bash
+sudo mount --bind /mnt/c/Windows/Fonts /usr/share/fonts/winFonts
+ # As long as the mounting path has not changed, or you have not installed new fonts, the following command does not need to be executed every time.
+ # sudo fc-cache -fv
+```
+**note**：If your windows fonts are in your user's dedicated directory, then you may need to mount them like this
+
+```bash
+sudo mount --bind /mnt/c/Users/pc/AppData/Local/Microsoft/Windows/Fonts /usr/share/fonts/winFonts
+sudo fc-cache -fv
+```
+
+In the above example, my user name is pc.
+
+(3). Check whether a font has been installed in the current system
+
+```bash
+qinqing@DESKTOP-0MVRMOU:~/Desktop$ fc-list | grep -i sarasa
+/usr/share/fonts/winFonts/sarasa-mono-sc-regular.ttf: Sarasa Mono SC,等距更纱黑体 SC:style=Regular
+qinqing@DESKTOP-0MVRMOU:~/Desktop$ 
+```
+### 7.3 ALT key does not work in GUI program in remote desktop
+
+It may be because ALT is bound to other functions by the remote environment.Can be bound to other keys in the application.
+
+
 
