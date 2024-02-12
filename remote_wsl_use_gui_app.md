@@ -304,9 +304,29 @@ qinqing@DESKTOP-0MVRMOU:~/Desktop$ fc-list | grep -i sarasa
 /usr/share/fonts/winFonts/sarasa-mono-sc-regular.ttf: Sarasa Mono SC,等距更纱黑体 SC:style=Regular
 qinqing@DESKTOP-0MVRMOU:~/Desktop$ 
 ```
+
 ### 7.3 ALT key does not work in GUI program in remote desktop
 
 It may be because ALT is bound to other functions by the remote environment.Can be bound to other keys in the application.
 
+## 8 Set up password-free login for wsl
 
+If you use it yourself, having a password will cause trouble every time you log in.The following method can delete the user's password.
+
+```bash
+ # in power shell
+wsl --user root
+ # input root password if needed
+passwd -d username
+```
+## 1 Set ubuntu in wsl not to automatically lock the screen
+
+If it cannot be awakened normally after locking the screen, it will become impossible to enter again.
+Since we are using it remotely, we can completely disable this function.
+
+`Applications`—>`Settings`—>`Light Locker Settings`
+
+![light_locker_set_never](img/light_locker_set_never.png)
+
+After setting as above, then click the `apply` button.
 
