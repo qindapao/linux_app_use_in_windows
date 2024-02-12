@@ -200,7 +200,7 @@ Makefile.
 
 ```bash
 perl Makefile.PL
-# delete -lnsl
+#- delete -lnsl
 make
 make install
 ```
@@ -214,7 +214,7 @@ After installation, the missing modules can be installed manually.
 If some modules cannot be installed, it may not affect the use. For example, 
 in my environment, `Term::TermKey` cannot be installed.
 
-## 1 Use the lxqt desktop environment to execute GTK3 GUI applications
+## 7 Use the lxqt desktop environment to execute GTK3 GUI applications
 
 Execute this command in the cygwin terminal:
 
@@ -226,7 +226,7 @@ The terminal can be found here.
 
 ![lxqt_find_terminal](./img/lxqt_find_terminal.png)
 
-## 2 Use the starxwin window to execute GTK3 GUI applications
+## 8 Use the starxwin window to execute GTK3 GUI applications
 
 The advantage of this method is that the window is the same as the windows 
 window and can be seamlessly integrated. The disadvantage is that the drawing 
@@ -240,7 +240,7 @@ export DISPLAY=:0.0
 asciio 2>/dev/null &
 ```
 
-## 3 Set lxqt desktop to multiple
+## 9 Set lxqt desktop to multiple
 
 Edit this file: `~/.config/openbox/lxqt-rc.xml`. In my environment, the path of 
 this file is: `E:\programes\cygwin\home\pc\.config\openbox\lxqt-rc.xml`
@@ -275,13 +275,13 @@ Change the `2` in the `<number>` tag above to the number of virtual desktops you
 want, for example, to `5`. You can use `5` virtual desktops at one time and use 
 the mouse wheel to switch in the blank space of the desktop.
 
-## 4 Install Chinese input method
+## 10 Install Chinese input method
 
-### 4.1 First ensure that the ibus framework is installed
+### 10.1 First ensure that the ibus framework is installed
 
 This has already been done when selecting ibus-related software packages.
 
-### 4.2 Install libpinyin library
+### 10.2 Install libpinyin library
 
 For specific installation, please refer to this [link](https://zhuanlan.zhihu.com/p/186289340).
 
@@ -299,7 +299,7 @@ make -j4
 make install
 ```
 
-### 4.3 Install ibus-libpinyin input method
+### 10.3 Install ibus-libpinyin input method
 
 The `libpinyin` we just installed is just a library, and `ibus-libpinyin` is 
 the specific implementation of this library under the ibus input method 
@@ -383,7 +383,7 @@ Remember to select ibus in the input method selector first
 
 ![select_ibus2](./img/select_ibus2.png)
 
-## 5 Set up the cygwin environment to share the font directory of windows
+## 11 Set up the cygwin environment to share the font directory of windows
 
 How to install a windows font into cygwin, you can read the [article](https://darrengoossens.wordpress.com/2022/03/01/add-a-windows-font-to-cygwin/).
 
