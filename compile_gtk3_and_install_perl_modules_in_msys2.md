@@ -23,18 +23,27 @@ pacman -S mingw-w64-ucrt-x86_64-libtool
 pacman -S mingw-w64-ucrt-x86_64-unibilium mingw-w64-ucrt-x86_64-libtermkey
 pacman -S mingw-w64-ucrt-x86_64-libthai
 pacman -S mingw-w64-ucrt-x86_64-libdatrie
+pacman -S mingw-w64-ucrt-x86_64-libunistring
 ```
 
-libthai libdatrie in other environment
+libthai libdatrie libunistring in other environment
 
 ```bash
-| Distribution  | Packages                     |
-|---------------|------------------------------|
-| Debian/Ubuntu | libthai-dev libdatrie-dev    |
-| Fedora/RedHat | libthai-devel libdatrie-devel|
-| Arch Linux    | libthai libdatrie            |
+| Distribution  | Packages                         |
+|---------------|----------------------------------|
+| Debian/Ubuntu | libthai-dev libdatrie-dev        |
+| Fedora/RedHat | libthai-devel libdatrie-devel    |
+| Arch Linux    | libthai libdatrie libunistring   |
 ```
 
+```bash
+| Distribution  | Packages                        |
+|---------------|---------------------------------|
+| Debian/Ubuntu | libunistring-dev libunistring2  |
+| Fedora/RedHat | libunistring-devel libunistring |
+| Arch Linux    | libunistring                    |
+| macOS (brew)  | libunistring                    |
+```
 
 ### Manually install `cpanm` into the environment.
 
