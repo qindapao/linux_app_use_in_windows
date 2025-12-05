@@ -21,6 +21,8 @@ pacman -S mingw-w64-ucrt-x86_64-gtk3 \
 			mingw-w64-ucrt-x86_64-gobject-introspection
 pacman -S mingw-w64-ucrt-x86_64-libtool
 pacman -S mingw-w64-ucrt-x86_64-unibilium mingw-w64-ucrt-x86_64-libtermkey
+pacman -S mingw-w64-ucrt-x86_64-libthai
+pacman -S mingw-w64-ucrt-x86_64-libdatrie
 ```
 
 ### Manually install `cpanm` into the environment.
@@ -306,6 +308,47 @@ then we can query the version number:
 perl -MGtk3 -e 'print $Gtk3::VERSION, "\n"'
 ```
 
+### Install `Unicode-LineBreak`
+
+(1). Download the installation package manually.
+
+```bash
+wget http://www.cpan.org/authors/id/N/NE/NEZUMI/Unicode-LineBreak-2019.001.tar.gz
+tar -xzf Unicode-LineBreak-2019.001.tar.gz
+cd Unicode-LineBreak-2019.001
+```
+
+(2). Generate the `Makefile` file.
+
+```bash
+perl Makefile.PL
+```
+
+(3). we modify the link library manually.
+
+`-ldatrie -lshlwapi` It's missing, we need to add it.
+
+```bash
+EXTRALIBS = -ldatrie -lshlwapi -lthai -lmoldname -lkernel32 -luser32 -lgdi32 -lwinspool -lcomdlg32 -ladvapi32 -lshell32 -lole32 -loleaut32 -lnetapi32 -luuid -lws2_32 -lmpr -lwinmm -lversion -lodbc32 -lodbccp32 -lcomctl32
+LDLOADLIBS = -ldatrie -lshlwapi -lthai -lmoldname -lkernel32 -luser32 -lgdi32 -lwinspool -lcomdlg32 -ladvapi32 -lshell32 -lole32 -loleaut32 -lnetapi32 -luuid -lws2_32 -lmpr -lwinmm -lversion -lodbc32 -lodbccp32 -lcomctl32
+BSLOADLIBS = 
+```
+
+(4). Perform build and installation.
+
+```bash
+mingw32-make
+mingw32-make install
+```
+
+(5). Verify that the installation was successful.
+
+```perl
+perl -MUnicode::GCString -e 'print Unicode::GCString->new("你好世界！")->columns, "\n";'
+```
+
+If the printout is `10`, it proves that we succeeded.
+
 
 ## Install other dependencies and asciio
 
@@ -398,5 +441,11 @@ cpanm --force Eval::Context
 
 ```bash
 cpanm --force IO::Prompter
+```
+
+11. Unicode::GCString
+
+```bash
+cpanm Unicode::GCString
 ```
 
