@@ -25,6 +25,17 @@ pacman -S mingw-w64-ucrt-x86_64-libthai
 pacman -S mingw-w64-ucrt-x86_64-libdatrie
 ```
 
+libthai libdatrie in other environment
+
+```bash
+| Distribution  | Packages                     |
+|---------------|------------------------------|
+| Debian/Ubuntu | libthai-dev libdatrie-dev    |
+| Fedora/RedHat | libthai-devel libdatrie-devel|
+| Arch Linux    | libthai libdatrie            |
+```
+
+
 ### Manually install `cpanm` into the environment.
 
 download: https://raw.githubusercontent.com/miyagawa/cpanminus/master/cpanm ,
